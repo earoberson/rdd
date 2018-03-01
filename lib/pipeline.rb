@@ -1,4 +1,5 @@
 require_relative 'data_pipeline/repository'
+require_relative 'data_pipeline/extractor'
 
 # The DataPipeline module will wrap the features of the Pipeline
 module DataPipeline
