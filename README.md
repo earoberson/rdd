@@ -2,6 +2,16 @@
 
 Created in response to https://gist.github.com/mkk-fullscreen/3409c24af7c2ac26fb824d0bd799e216
 
+To run tests:
+```
+rake test
+```
+
+To run CLI for now:
+```
+ruby rdd.rb
+```
+
 ``` sh
 rdd [--after DATETIME] [--before DATETIME] [--top COUNT]
 
