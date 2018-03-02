@@ -3,6 +3,7 @@ require_relative 'data_pipeline/extractor'
 require_relative 'data_pipeline/transformer'
 require 'tzinfo'
 require 'fileutils'
+require 'concurrent'
 
 # The DataPipeline module will wrap the features of the Pipeline
 module DataPipeline
@@ -50,9 +51,17 @@ module DataPipeline
     # This method extracts data for each hour between
     # the config dates
     def extract_data
+      pcount = Concurrent.processor_count / 2
+      Signal.trap("CLD") { pcount += 1 }
+
       dates.each do |date|
-        Extractor.new(date).extract
+        Process.wait if pcount <= 0
+        pcount -= 1
+
+        fork { Extractor.new(date).extract }
       end
+
+      Process.waitall
     end
 
     # This method transforms the data into a parsable
