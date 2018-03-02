@@ -7,6 +7,9 @@ module DataPipeline
   # from gz files to the data required for the results
   # of the CLI.
   class Transformer
+
+    # @!group Attributes
+
     # @!attribute data
     # The dictionary of repository names to point values
     # created from parsed data.
@@ -15,7 +18,7 @@ module DataPipeline
 
     # @!attribute filenames
     # An array of filenames to process
-    # @return [Hash]
+    # @return [Array]
     attr_reader :filenames
 
     # This method initializes an instance of Transform

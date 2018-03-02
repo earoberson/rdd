@@ -2,14 +2,19 @@
 
 Created in response to https://gist.github.com/mkk-fullscreen/3409c24af7c2ac26fb824d0bd799e216
 
+Clone and bundle:
+```
+git clone git@github.com:earoberson/rdd.git && cd rdd && bundle
+```
+
 To run tests:
 ```
 rake test
 ```
 
-To run CLI for now:
+To run:
 ```
-ruby rdd.rb
+./rdd.rb
 ```
 
 ``` sh

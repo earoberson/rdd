@@ -1,11 +1,7 @@
- #!/usr/bin/env ruby
+#!/usr/bin/env ruby
 require 'optparse'
 require 'optparse/date'
 require './lib/pipeline'
-
-# TODO: add a data pipeline to extract, transform, and display results from
-#       the githubarchive.org API
-# TODO: add some spec to outline and detail the data pipeline
 
 options = {}
 OptionParser.new do |opts|

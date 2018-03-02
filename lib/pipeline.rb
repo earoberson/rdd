@@ -12,6 +12,8 @@ module DataPipeline
   class Pipeline
     TZ = TZInfo::Timezone.get('UTC')
 
+    # @!group Attributes
+
     # @!attribute after_date
     # @!attribute after_date=
     # The start datetime for which to get data.
@@ -35,6 +37,8 @@ module DataPipeline
       @num_results = options[:top] || 20
     end
 
+    # @!group Instance Methods
+    
     # This method will handle processing of the pipeline
     def process
       puts "Getting Github statistics for #{dates.first} - #{dates.last}"
