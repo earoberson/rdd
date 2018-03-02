@@ -1,0 +1,25 @@
+EventTypes:
+  CreateEvent:
+    points: 10
+  ForkEvent:
+    points: 5
+  MemberEvent:
+    points: 3
+    criteria:
+      payload:
+        action: added
+  PullRequestEvent:
+    points: 2
+    criteria:
+      payload:
+        action: closed
+        pull_request:
+          merged: 'true'
+  WatchEvent:
+    points: 1
+  IssuesEvent:
+    points: 1
+    criteria:
+      payload:
+        action: opened
+
