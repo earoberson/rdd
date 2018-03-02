@@ -29,7 +29,7 @@ module DataPipeline
         file << open(BASE_URL + @date + ".json.gz").read
 
       rescue => e
-        puts e.message
+        puts "Error fetching an archive for " + @date + ": " + e.message
 
       ensure
         file.close

@@ -72,7 +72,7 @@ module DataPipeline
           parse(Zlib::GzipReader.new(file).read)
 
         rescue => e
-          puts e.message
+          puts "Error parsing a file: " + filename + " message: " + e.message
 
         ensure
           file.close
