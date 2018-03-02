@@ -7,7 +7,6 @@ require './lib/pipeline'
 #       the githubarchive.org API
 # TODO: add some spec to outline and detail the data pipeline
 
-options = {}
 OptionParser.new do |opts|
   opts.on_tail("-h", "--help", "Show this message") do
     puts opts
@@ -33,4 +32,4 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-DataPipeline::Pipeline.process
+DataPipeline::Pipeline.new(options).process
