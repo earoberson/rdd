@@ -17,14 +17,21 @@ To run:
 ./rdd.rb
 ```
 
-``` sh
-rdd [--after DATETIME] [--before DATETIME] [--top COUNT]
+Notes:
+```
+The Github Archive does not archive the current hour until the end of the hour.
+Fetching data will currently skip any files that are not yet available if
+githubarchive.org responds with 403.
+```
 
-rdd --after 2015-03-18T13:00:00Z
-rdd --after 2015-08-05T15:10:02-00:00
-rdd --after 2015-03-16
-rdd --top 500
-rdd --after 2015-01-01 --before 2015-01-08
+``` sh
+./rdd.rb [--after DATETIME] [--before DATETIME] [--top COUNT]
+
+./rdd.rb --after 2015-03-18T13:00:00Z
+./rdd.rb --after 2015-08-05T15:10:02-00:00
+./rdd.rb --after 2015-03-16
+./rdd.rb --top 500
+./rdd.rb --after 2015-01-01 --before 2015-01-08
 ```
 
 ```
